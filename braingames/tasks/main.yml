@@ -1,0 +1,9 @@
+---
+# use --become-user <your_user> for changes being made upon upon the user
+# and don't forget about --ask-sudo-pass
+- hosts: all
+  tasks:
+   - include: node.yml 
+   - include: misc.yml
+  become_user: root
+  become: true

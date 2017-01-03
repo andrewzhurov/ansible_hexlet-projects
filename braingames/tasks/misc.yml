@@ -1,0 +1,9 @@
+---
+
+- name: Updates cache
+  apt: update_cache=yes
+
+- name: Installs necessary packages
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - git

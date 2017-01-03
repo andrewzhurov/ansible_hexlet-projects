@@ -1,0 +1,15 @@
+---
+- name: Node| Adds repo with nodejs v7 
+  shell: curl -sL https://deb.nodesource.com/setup_7.x | bash -
+  become_flags: -E
+
+- name: Updates cache
+  apt: update_cache=yes
+
+- name: Node| Installs nodejs 
+  apt: pkg=nodejs state=latest
+
+#- name: Installs latest npm
+#  shell: curl -L https://www.npmjs.com/install.sh | sh
+
+
